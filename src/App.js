@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Route, NavLink, HashRouter } from "react-router-dom";
 import "./App.css";
 import Recipe from "./Recipe";
+import ChatApp from "./ChatApp";
+
+//import "./styles/style.scss";
+import "./App.css";
 
 // await is used for some data that does not come back instantly (promise)
 
@@ -51,6 +56,11 @@ const App = () => {
           ingredients={recipe.recipe.ingredients}
         />
       ))}
+      <HashRouter>
+        <div>
+          <Route exact path="/" component={ChatApp} />
+        </div>
+      </HashRouter>
     </div>
   );
 };
